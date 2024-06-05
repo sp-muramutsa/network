@@ -6,6 +6,8 @@ from django.urls import reverse
 
 from .models import User
 
+from .forms import *
+
 
 def index(request):
     return render(request, "network/index.html")
@@ -61,3 +63,9 @@ def register(request):
         return HttpResponseRedirect(reverse("index"))
     else:
         return render(request, "network/register.html")
+
+def new(request):
+    if request.method == "POST":
+        pass
+    else:
+        return render(request,"network/index.html", form =)
