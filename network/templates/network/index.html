@@ -2,8 +2,19 @@
 
 {% block body %}
     <div>
-        <form action="{url 'new' }" method="POST">
+        <form action="{% url 'new' %}" method="GET">
             <button>Add New Post</button>
         </form>
+
+        {% for post in posts%}
+        <div>
+            <div>
+                On {{ post.created_at }} <a href="{% url 'profile' username=post.author %}">{{ post.author }}</a> tweeted
+            </div>
+            <div>
+                <h4>{{ post.content }}</h4>
+            </div>
+        </div>
+        {% endfor %}
     </div>
 {% endblock %}

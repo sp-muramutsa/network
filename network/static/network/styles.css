@@ -1,0 +1,34 @@
+body
+{
+    color: red;
+}
+#portrait 
+{
+    width: 150px;  /* Adjust the size as needed */
+    height: 150px;
+    border: 1px solid #ddd;
+    border-radius: 50%; /* Make the image circular */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#portrait img 
+{
+    width: 10px;
+    height: 10%;
+    object-fit: cover; /* Ensure the image covers the container without stretching */
+}
+
+#portrait-placeholder 
+{
+    width: 10%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    color: #aaa;
+    font-size: 14px;
+}
