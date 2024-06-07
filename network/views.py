@@ -121,5 +121,14 @@ def follow_unfollow(request, username):
 
     return redirect(reverse('profile', args=[networker.username]))
     
-
+@login_required
+def following(request):
+    user = request.user
+    posts = Post.objects.all()
+    following = user.follows.all()
+    posts_by_following = [post for post in posts if post.author in following] 
+    
+    return render(request, "network/following.html", {
+        'posts_by_following': posts_by_following
+    })
 
